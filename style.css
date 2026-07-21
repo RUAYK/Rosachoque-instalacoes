@@ -159,7 +159,6 @@ h2{
 }
 
 
-
 section p{
 
     max-width:900px;
@@ -371,4 +370,13 @@ nav a {
 }
 
 
+}
+
+
+/* Fallback: garantir visibilidade dos cards em #servicos caso o JS não execute */
+#servicos .card {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: none !important;
+    display: block !important;
 }
