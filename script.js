@@ -7,6 +7,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             target.scrollIntoView({
                 behavior: 'smooth'
             });
+            // Garantir que os cards fiquem visíveis após o scroll para âncora
+            setTimeout(() => revealCards(target), 350);
         }
     });
 });
@@ -27,6 +29,16 @@ const observer = new IntersectionObserver(function(entries) {
         }
     });
 }, observerOptions);
+
+// Função para revelar imediatamente os cards (usada ao pular para #servicos)
+function revealCards(sectionEl) {
+    if (!sectionEl) return;
+    sectionEl.classList.add('visible-cards');
+    sectionEl.querySelectorAll('.card').forEach(card => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+    });
+}
 
 // Adicionar animação CSS
 const style = document.createElement('style');
@@ -51,10 +63,12 @@ style.textContent = `
         transform: translateY(20px);
         transition: opacity 0.6s ease, transform 0.6s ease;
         cursor: default;
+        display: block;
     }
 
     /* Quando a seção de serviços for o alvo (click em #servicos), mostrar imediatamente os cards */
-    #servicos:target .card {
+    #servicos:target .card,
+    #servicos.visible-cards .card {
         opacity: 1;
         transform: translateY(0);
     }
@@ -64,6 +78,19 @@ document.head.appendChild(style);
 // Observar cards
 document.querySelectorAll('.card').forEach(card => {
     observer.observe(card);
+});
+
+// Se a página for carregada com #servicos no hash, revelar os cards imediatamente
+if (location.hash === '#servicos') {
+    const target = document.querySelector(location.hash);
+    // dar um pequeno delay para garantir que o layout esteja pronto
+    setTimeout(() => revealCards(target), 100);
+}
+
+// Ouvir mudanças no hash (por exemplo ao clicar no link ou usar histórico)
+window.addEventListener('hashchange', () => {
+    const target = document.querySelector(location.hash);
+    revealCards(target);
 });
 
 // Log de carregamento
