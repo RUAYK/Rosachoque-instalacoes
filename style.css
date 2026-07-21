@@ -1,0 +1,374 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f6f8;
+    color:#222;
+}
+
+
+/* CABEÇALHO */
+
+header{
+    background:#071b33;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.logo span{
+    display:block;
+    font-size:14px;
+    color:#ffc400;
+}
+
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:bold;
+}
+
+
+nav a:hover{
+    color:#ffc400;
+}
+
+
+
+/* BANNER PRINCIPAL */
+
+.hero{
+
+    min-height:85vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.65),
+    rgba(0,0,0,.65)
+    ),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600'%3E%3Crect fill='%23071b33' width='1200' height='600'/%3E%3C/svg%3E");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    padding:8%;
+
+    color:white;
+
+}
+
+
+.hero-text{
+    max-width:650px;
+}
+
+
+.hero h1{
+
+    font-size:48px;
+    margin-bottom:20px;
+
+}
+
+
+.hero p{
+
+    font-size:22px;
+    line-height:1.5;
+    margin-bottom:30px;
+
+}
+
+
+
+/* BOTÕES */
+
+.botao{
+
+    display:inline-block;
+
+    background:#ffc400;
+
+    color:#000;
+
+    padding:15px 30px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+.botao:hover{
+
+    transform:scale(1.05);
+
+    background:#ffda45;
+
+}
+
+
+
+/* SEÇÕES */
+
+section{
+
+    padding:60px 8%;
+
+}
+
+
+h2{
+
+    text-align:center;
+
+    color:#071b33;
+
+    font-size:32px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+section p{
+
+    max-width:900px;
+
+    margin:auto;
+
+    font-size:18px;
+
+    line-height:1.6;
+
+}
+
+
+
+/* EMERGÊNCIA */
+
+
+.emergencia{
+
+    background:#071b33;
+
+    color:white;
+
+    text-align:center;
+
+}
+
+
+.emergencia h2{
+
+    color:#ffc400;
+
+}
+
+
+.emergencia p{
+
+    margin-bottom:30px;
+
+}
+
+
+
+/* SERVIÇOS */
+
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+
+
+.card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.12);
+
+    transition:.3s;
+
+}
+
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+.card h3{
+
+    color:#071b33;
+
+    margin-bottom:15px;
+
+}
+
+
+
+/* ÁREA */
+
+.area{
+
+    text-align:center;
+
+    background:#ffc400;
+
+}
+
+
+
+/* CONTATO */
+
+
+#contato{
+
+    text-align:center;
+
+}
+
+
+
+/* WHATSAPP FLUTUANTE */
+
+
+.whatsapp{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    background:#25d366;
+
+    color:white;
+
+    padding:18px 25px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    box-shadow:0 5px 15px #555;
+
+    transition: 0.3s;
+
+}
+
+
+.whatsapp:hover{
+
+    transform: scale(1.1);
+
+    background: #1ead57;
+
+}
+
+
+/* RODAPÉ */
+
+
+footer{
+
+    background:#000;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+
+
+/* CELULAR */
+
+
+@media(max-width:768px){
+
+
+header{
+
+    flex-direction:column;
+
+}
+
+
+nav{
+
+    margin-top:15px;
+
+}
+
+
+.hero h1{
+
+    font-size:34px;
+
+}
+
+
+.hero p{
+
+    font-size:18px;
+
+}
+
+
+nav a {
+
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+
+}
